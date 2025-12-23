@@ -1,5 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import DemoCard from "@/components/DemoCard";
+import StackGroup from "@/components/StackGroup";
+import TechBadge from "@/components/TechBadge";
 
 export default function HomePage() {
   return (
@@ -8,7 +11,12 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-xl font-semibold text-orange-900">
-              <Image height={30} width={100} src="/images/icon.png" alt="Logo" />
+              <Image
+                height={30}
+                width={100}
+                src="/images/icon.png"
+                alt="Logo"
+              />
             </Link>
 
             <nav className="flex items-center gap-6 text-sm">
@@ -64,37 +72,31 @@ export default function HomePage() {
               <DemoCard
                 title="Drag-and-drop workflows"
                 description="Task movement across columns using a Kanban-style interaction model."
-                image="/images/dragndrop-feature-image.webp"
               />
 
               <DemoCard
                 title="Optimistic UI updates"
                 description="Immediate UI feedback with graceful handling of async state changes."
-                image="/images/optimistic-ui.webp"
               />
 
               <DemoCard
                 title="State coordination"
                 description="Clear separation of local, derived, and server-backed state."
-                image="/images/state-management.webp"
               />
 
               <DemoCard
                 title="Access-aware interfaces"
                 description="UI behavior that adapts based on authentication and user roles."
-                image="/images/auth-roles.webp"
               />
 
               <DemoCard
                 title="Component-driven UI"
                 description="Reusable components with predictable data flow and structure."
-                image="/images/components.webp"
               />
 
               <DemoCard
                 title="Responsive layouts"
                 description="Mobile-first layouts implemented with Tailwind CSS."
-                image="/images/responsive.webp"
               />
             </div>
           </div>
@@ -166,34 +168,5 @@ export default function HomePage() {
         </div>
       </footer>
     </>
-  );
-}
-
-function DemoCard({ title, description }) {
-  return (
-    <div className="rounded-xl border border-zinc-300 bg-white p-6">
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="mt-2 text-gray-600">{description}</p>
-    </div>
-  );
-}
-
-function StackGroup({ title, children }) {
-  return (
-    <div>
-      <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
-        {title}
-      </h3>
-
-      <div className="mt-3 flex flex-wrap gap-3">{children}</div>
-    </div>
-  );
-}
-
-function TechBadge({ label }) {
-  return (
-    <span className="inline-flex items-center rounded-lg border bg-white px-3 py-1.5 text-sm text-gray-700">
-      {label}
-    </span>
   );
 }
