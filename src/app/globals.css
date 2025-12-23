@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@fontsource-variable/dm-sans";
+
+* {
+  font-family: "DM Sans Variable", sans-serif;
+}
+
+.mesh-background {
+  background-color: #fad5a5;
+  background-image: url("/images/noise-texture.webp");
+  background-blend-mode: overlay;
+}
